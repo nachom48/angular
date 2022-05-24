@@ -1,0 +1,20 @@
+
+<!-- Una directiva es un atributo que pueden cambiar la apariencia o el comportamiento del DOM ELEMENT 
+Hay varios tipos de directivas, de atributos, de directivas Customs, de Componentes(son directivas con template)-->
+
+<!-- La directiva ngFor es como un for each q recorre el array de productos y me deja acceder cada producto -->
+
+<section class="products">
+    <app-product 
+    [product]="product" 
+    *ngFor="let product of products" 
+    (addToCartClick)="addToCart($event)">
+        
+        <!-- Aqui llamo app-product para pintar este producto y el ngFor es una directiva de angular para q se haga un foreach, con la propiedad [product] le paso la informacion,y esa informacion viene
+        de lo q recorro con el array de productos, es una directiva estructural  -->
+    </app-product>
+ 
+ 
+ </section>
+ <!-- // app-item-detail[target] ="currentItem"></app-item-detail>
+el item es el target , es lo q le mando con el inPut -->

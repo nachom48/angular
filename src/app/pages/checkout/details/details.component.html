@@ -1,0 +1,29 @@
+<div class="container__table">
+  <table class="tabla">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Qty</th>
+        <th>Price unit</th>
+        <th>Sub total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- para imprimir los objetos del cart hago uso del observable y tambien cone l pipe async -->
+      <tr *ngFor="let item of cart$ | async ">
+        <td>{{item.name}}</td>
+        <td>{{item.qty}}</td>
+        <td>{{item.price | currency}}</td>
+        <td>{{item.qty*item.price | currency}}</td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>
+
+<div class="container__total">
+  <p class="total">
+    <!-- Aca tenemos q leer los observables -->
+    <strong>Total : <span>{{total$ | async | currency}}</span></strong>
+  </p>
+</div>
